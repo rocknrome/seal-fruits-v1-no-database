@@ -8,10 +8,10 @@ const router = express.Router()
 // get request to /fruits
 // return all fruits
 router.get("/fruits", (req, res) => {
-    // res.send(fruits)
-    // "index.ejs" => "./views/index.ejs"
+       // res.send(fruits)
+    // "fruits/index.ejs" => "./views/fruits/index.ejs"
     // {fruits} => {fruits:fruits}
-    res.render("index.ejs", {fruits})
+    res.render("fruits/index.ejs", {fruits})
 })
 
 // New Route - Render a page with a form
@@ -20,7 +20,7 @@ router.get("/fruits", (req, res) => {
 router.get("/fruits/new", (req, res) => {
     // render a template with our form
     // new.ejs = ./views/ + new.js
-    res.render("new.ejs")
+    res.render("fruits/new.ejs")
 })
 
 // Create Route - Receives Form Data, Creates New Fruit
@@ -69,7 +69,7 @@ router.get("/fruits/:id/edit", (req, res) => {
     const fruit = fruits[id]
     // send the id and fruit over to the template
     // edit.ejs -> ./views/edit.ejs
-    res.render("edit.ejs",{fruit, id})
+    res.render("fruits/edit.ejs",{fruit, id})
 })
 
 // UPDATE ROUTE - Receive the form data, updates the fruit
@@ -107,7 +107,7 @@ router.get("/fruits/:id", (req, res) => {
     // res.render(template, data)
     // for the template assume "/views/"
     // "show.ejs" =>  ./views/show.ejs
-    res.render("show.ejs", {fruit, id})
+    res.render("fruits/show.ejs", {fruit, id})
     // {fruit} is the same as {fruit:fruit}
 })
 
