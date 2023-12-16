@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Update <%= fruit.name %></title>
+    <%- include("./cssjs.ejs") %>
+  </head>
+  <body>
+    <h1>Update <%= fruit.name %></h1>
+    <form action="/fruits/<%= id %>?_method=PUT" method="post">
+      <label>Name: <input type="text" name="name" value="<%= fruit.name %>"/></label>
+      <label>Color: <input type="text" name="color" value="<%= fruit.color %>"/></label>
+      <label>Ready To Eat: <input type="checkbox" name="readyToEat"
+
+        <% if(fruit.readyToEat === true){ %>
+            checked
+        <% } %>
+
+        /></label>
+      <input type="submit" value="Update <%= fruit.name %>" />
+    </form>
+  </body>
+</html>

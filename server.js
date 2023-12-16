@@ -81,6 +81,24 @@ app.delete("/fruits/:id", (req, res) => {
 })
 
 
+// EDIT ROUTE - Render a Form to Edit a Specific Fruit
+// GET to /fruits/:id/edit
+// Render a Form with the existing values filled in
+app.get("/fruits/:id/edit", (req, res) => {
+    // get the id from params
+    const id = req.params.id
+    // get the fruit being updated
+    const fruit = fruits[id]
+    // send the id and fruit over to the template
+    // edit.ejs -> ./views/edit.ejs
+    res.render("edit.ejs",{fruit, id})
+})
+
+
+
+
+
+
 // fruits show route
 // get request to /fruits/:id
 // return a single fruit
