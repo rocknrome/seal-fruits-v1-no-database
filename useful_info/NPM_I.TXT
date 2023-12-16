@@ -1,4 +1,8 @@
 npm i
 
-this is a command to re-install all of the packages from package.json
-IMOPORTANT! Make sure I am in the same folder as package.json file
+//this is a command to re-install all of the packages from package.json
+//IMOPORTANT! Make sure I am in the same folder as package.json file
+
+npm install method-override morgan
+
+//package for deletion capabilities. chack package.json to make sure the package installed

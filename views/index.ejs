@@ -13,11 +13,16 @@
     </nav>
 
     <ul>
-    <% for (let i = 0; i < fruits.length; i++){ %>
+        <% for (let i = 0; i < fruits.length; i++){ %>
 
-        <a href="/fruits/<%= i %>"><li><%= fruits[i].name %></li></a>
+            <a href="/fruits/<%= i %>"><li><%= fruits[i].name %>
+            </li></a>
 
-    <% } %>
+            <form action="/fruits/<%= i %>?_method=DELETE" method="post">
+                <input type="submit" value="delete">
+            </form>
+
+        <% } %>
     </ul>
 
 </body>
