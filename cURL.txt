@@ -1,0 +1,3 @@
+to open cURL I need to run it on bash terminal
+
+example: curl -X POST -d name="kiwi" -d color="green" -d readyToEat="on" localhost:3000/fruits
