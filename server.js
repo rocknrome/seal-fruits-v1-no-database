@@ -94,10 +94,25 @@ app.get("/fruits/:id/edit", (req, res) => {
     res.render("edit.ejs",{fruit, id})
 })
 
-
-
-
-
+// UPDATE ROUTE - Receive the form data, updates the fruit
+// PUT to /fruits/:id
+// Update the specified fruit, then redirect to index
+app.put("/fruits/:id", (req, res) => {
+    // get the id
+    const id = req.params.id
+    // get the body
+    const body = req.body
+    // convert readyToEat to true or false
+    if(body.readyToEat === "on"){
+        body.readyToEat = true
+    } else {
+        body.readyToEat = false
+    }
+    // swap the old version with the new version
+    fruits[id] = body
+    // redirect back to the index page
+    res.redirect("/fruits")
+})
 
 // fruits show route
 // get request to /fruits/:id
@@ -114,7 +129,7 @@ app.get("/fruits/:id", (req, res) => {
     // res.render(template, data)
     // for the template assume "/views/"
     // "show.ejs" =>  ./views/show.ejs
-    res.render("show.ejs", {fruit})
+    res.render("show.ejs", {fruit, id})
     // {fruit} is the same as {fruit:fruit}
 })
 
