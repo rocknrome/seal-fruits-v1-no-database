@@ -4,10 +4,8 @@ const express = require("express")
 const morgan = require("morgan")
 // import method override
 const methodOverride = require("method-override")
-
-// import our fruits
-// require will return the value of module.exports
-const fruits = require("./models/fruits.js")
+//import fruits controller
+const fruitsRouter = require("./controllers/fruits.js");
 
 // create our app object
 const app = express()
@@ -26,6 +24,8 @@ app.use(morgan("dev"))
 // It will look for a _method url query
 app.use(methodOverride("_method"))
 
+//register FruitsRouter
+app.use("/fruits", fruitsRouter)
 
 
 // server listener to turn our server
