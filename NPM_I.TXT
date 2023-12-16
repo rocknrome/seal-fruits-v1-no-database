@@ -1,0 +1,4 @@
+npm i
+
+this is a command to re-install all of the packages from package.json
+IMOPORTANT! Make sure I am in the same folder as package.json file
